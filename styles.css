@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap");
+
+/* variables */
+
+:root {
+  --main-bg-color: #798281;
+  --secondary-bg-color: #818785;
+  --tertiary-bg-color: #9da29e;
+  --footer-bg-color: #686666;
+  --services-with-prices-bg: #a0a098;
+  --brown-color: #372f2c;
+  --white-gray-color: #d0d0cf;
+}
+
+/* properties */
+.brown-text {
+  color: var(--brown-color);
+}
+
+.gray-text {
+  color: var(--white-gray-color);
+}
+
+.bold {
+  font-weight: 900 !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-14 {
+  font-size: 14px !important;
+}
+
+.text-36 {
+  font-size: 36px !important;
+}
+
+.text-48 {
+  font-size: 48px !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+body {
+  font-family: Roboto;
+  background-color: var(--main-bg-color);
+  font-size: 20px;
+  color: black;
+}
+
+.container {
+  width: 1620px !important;
+  margin: 0 auto;
+}
+
+/* header */
+
+.head,
+.head-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  font-size: 20px;
+}
+
+.head {
+  justify-content: space-around;
+}
+
+.head-left {
+  gap: 15px;
+}
+
+.head-left .logo {
+  margin-right: 25px;
+}
+
+.address-text {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+  line-height: normal;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.button-default {
+  background-color: var(--brown-color);
+  color: #fff;
+  border: none;
+  border-radius: 0 0 15px 0;
+  height: 60px;
+}
+
+#head-button {
+  width: 250px;
+}
+
+/* body */
+
+hr {
+  margin-top: 0;
+  border-color: var(--brown-color);
+  opacity: 1;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  /* gap: 100px; */
+}
+
+.gallery-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.gallery-row-center {
+  align-items: center;
+}
+
+.gallery-appointment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+#gallery-button {
+  width: 400px;
+  font-size: 15px;
+}
+
+.text-about {
+  /* text-align: justify; */
+  width: 710px;
+}
+
+/* services */
+
+.services-section {
+  background-color: var(--secondary-bg-color);
+  padding-block: 50px 210px;
+}
+
+.services {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.service {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-bottom: 105px;
+}
+
+.service-image {
+  width: 110px;
+  height: 110px;
+}
+
+.service-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-discription {
+  width: 300px;
+  /* text-align: justify; */
+}
+
+.services-with-prices {
+  display: flex;
+  flex-direction: row;
+  /* gap: 30px; */
+  justify-content: space-around;
+}
+
+.service-with-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--services-with-prices-bg);
+  font-size: 36px;
+  font-weight: 900;
+  gap: 15px;
+  /* padding-block: 20px 40px; */
+  width: 480px;
+  height: 250px;
+}
+
+.usluga {
+  margin-bottom: -10px;
+}
+
+.service-with-price button {
+  font-size: 20px;
+  width: 250px;
+  height: 60px;
+}
