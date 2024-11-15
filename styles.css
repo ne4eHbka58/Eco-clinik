@@ -9,12 +9,17 @@
   --footer-bg-color: #686666;
   --services-with-prices-bg: #a0a098;
   --brown-color: #372f2c;
+  --dark-brown-color: #363232;
   --white-gray-color: #d0d0cf;
 }
 
 /* properties */
 .brown-text {
   color: var(--brown-color);
+}
+
+.dark-brown-text {
+  color: var(--dark-brown-color);
 }
 
 .gray-text {
@@ -43,17 +48,33 @@
 
 .text-center {
   text-align: center !important;
+  /* margin: 0 auto; */
 }
 
 .text-justify {
   text-align: justify !important;
 }
 
+button {
+  cursor: pointer;
+}
+
+html {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
 body {
+  width: 100%;
+
   font-family: Roboto;
   background-color: var(--main-bg-color);
   font-size: 20px;
   color: black;
+  padding: 0;
+  margin: 0;
 }
 
 .container {
@@ -102,6 +123,7 @@ body {
 .button-default {
   background-color: var(--brown-color);
   color: #fff;
+  font-size: 20px;
   border: none;
   border-radius: 0 0 15px 0;
   height: 60px;
@@ -143,6 +165,10 @@ hr {
   gap: 25px;
 }
 
+#img-undefined-1 {
+  border: 1px solid var(--brown-color);
+}
+
 #gallery-button {
   width: 400px;
   font-size: 15px;
@@ -162,10 +188,13 @@ hr {
 
 .services {
   margin-top: 90px;
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-between; */
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
 }
 
 .service {
@@ -191,10 +220,12 @@ hr {
 }
 
 .services-with-prices {
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
   /* gap: 30px; */
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
 
 .service-with-price {
@@ -219,4 +250,103 @@ hr {
   font-size: 20px;
   width: 250px;
   height: 60px;
+}
+
+/* greetings */
+
+.greetings-section {
+  background-color: var(--tertiary-bg-color);
+  padding: 35px 0 55px;
+}
+
+.greetings-image {
+  width: 400px;
+  aspect-ratio: 2 / 3;
+  /* height: 600px; */
+  /* object-fit: contain; */
+  border-radius: 15px;
+  margin-left: 150px;
+}
+
+/* dentistry */
+
+.dentistry {
+  padding-block: 70px 205px;
+}
+
+.examples {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 130px;
+  margin-bottom: 115px;
+}
+
+.arrow-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.arrow {
+  width: 80px;
+  height: 80px;
+  background-color: var(--dark-brown-color);
+  border-radius: 15px;
+  border: none;
+  margin: 0;
+}
+
+.arrow-next {
+  transform: scale(-1, 1);
+}
+
+/* welcome */
+
+.welcome-content {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 70px;
+}
+
+.welcome-text {
+  margin-bottom: 130px;
+}
+
+.welcome-image {
+  width: 500px;
+  aspect-ratio: 10 / 7;
+  border-radius: 15px;
+}
+
+/* contacts */
+
+.contacts {
+  margin-top: 65px;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+}
+
+.map {
+  margin-left: 90px;
+}
+
+.contacts-text {
+  margin-left: 300px;
+}
+
+.info-with-pins {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.info-with-pin {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--dark-brown-color);
 }
