@@ -59,6 +59,10 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 html {
   width: 100%;
   padding: 0;
@@ -127,6 +131,7 @@ body {
   border: none;
   border-radius: 0 0 15px 0;
   height: 60px;
+  transition: box-shadow 0.3s;
 }
 
 #head-button {
