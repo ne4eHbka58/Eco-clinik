@@ -268,9 +268,9 @@ hr {
   margin-left: 150px;
 }
 
-/* dentistry */
+/* dentistry section*/
 
-.dentistry {
+.dentistry-section {
   padding-block: 70px 205px;
 }
 
@@ -304,14 +304,14 @@ hr {
 
 /* welcome */
 
+.welcome-text {
+  margin-bottom: 130px;
+}
+
 .welcome-content {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 70px;
-}
-
-.welcome-text {
-  margin-bottom: 130px;
 }
 
 .welcome-image {
@@ -349,4 +349,16 @@ hr {
   align-items: center;
   gap: 15px;
   color: var(--dark-brown-color);
+}
+
+/* footer */
+
+footer {
+  box-sizing: content-box;
+  background-color: var(--footer-bg-color);
+  height: 230px;
+}
+
+footer img {
+  margin: 50px 100px;
 }
