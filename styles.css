@@ -312,13 +312,6 @@ hr {
   opacity: 1;
 }
 
-.controls {
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
 .arrow-buttons {
   display: flex;
   flex-direction: row;
