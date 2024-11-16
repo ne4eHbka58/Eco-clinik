@@ -378,10 +378,6 @@ hr {
 }
 
 .slider {
-  /* width: 1080px;
-  aspect-ratio: 16/9;
-  position: relative;
-  margin: 0 auto 150px; */
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: space-between;
@@ -430,7 +426,6 @@ hr {
   display: flex;
   align-items: center;
   gap: 15px;
-  /* color: var(--dark-brown-color); */
 }
 
 /* footer */
