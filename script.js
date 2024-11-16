@@ -2,71 +2,61 @@ const slider = document.querySelector(".slider");
 
 const slides = Array.from(slider.children);
 
+const slide_1 = document.querySelector("#slide-1");
+
+const slide_2 = document.querySelector("#slide-2");
+
+const slide_3 = document.querySelector("#slide-3");
+
 const prevButton = document.querySelector(".button-prev");
 
 const nextButton = document.querySelector(".button-next");
 
-const dotsContainer = document.querySelector(".dots");
+let images = [
+  "media/dentistry-1.png",
+  "media/dentistry-2.png",
+  "media/dentistry-3.png",
+  "media/image.png",
+];
 
-let currentSlide = 0;
+let previousSlide = 0;
+let currentSlide = 1;
+let followingSlide = 2;
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove("active");
-    if (i === index) {
-      slide.classList.add("active");
-    }
-  });
+function showSlide(prevIndex, index, nextIndex) {
+  slide_1.src = images[prevIndex];
+  slide_2.src = images[index];
+  slide_3.src = images[nextIndex];
+  previousSlide = prevIndex;
   currentSlide = index;
-  updateDots();
+  followingSlide = nextIndex;
+  console.log(
+    `active slides: ${previousSlide} ${currentSlide} ${followingSlide}`
+  );
 }
 
 function nextSlide() {
-  currentSlide++;
-  if (currentSlide >= slides.length) {
-    currentSlide = 0;
+  previousSlide = currentSlide;
+  currentSlide = followingSlide;
+  followingSlide++;
+  if (followingSlide >= images.length) {
+    followingSlide = 0;
   }
-  showSlide(currentSlide);
-  clearInterval(intervalId); // сбросить предыдущий интервал
-  intervalId = setInterval(nextSlide, 8000);
+  showSlide(previousSlide, currentSlide, followingSlide);
 }
 
 function prevSlide() {
-  currentSlide--;
-  if (currentSlide < 0) {
-    currentSlide = slides.length - 1;
+  followingSlide = currentSlide;
+  currentSlide = previousSlide;
+  previousSlide--;
+  if (previousSlide < 0) {
+    previousSlide = images.length - 1;
   }
-  showSlide(currentSlide);
-  clearInterval(intervalId); // сбросить предыдущий интервал
-  intervalId = setInterval(nextSlide, 8000);
-}
-
-function createDots() {
-  for (let i = 0; i < slides.length; i++) {
-    const dot = document.createElement("div");
-    dot.classList.add("dot");
-    dot.addEventListener("click", () => {
-      showSlide(i);
-      clearInterval(intervalId);
-      intervalId = setInterval(nextSlide, 8000);
-    });
-    dotsContainer.appendChild(dot);
-  }
-}
-
-function updateDots() {
-  const dots = dotsContainer.querySelectorAll(".dot");
-  dots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === currentSlide);
-  });
+  showSlide(previousSlide, currentSlide, followingSlide);
 }
 
 prevButton.addEventListener("click", prevSlide);
 
 nextButton.addEventListener("click", nextSlide);
 
-createDots();
-
-showSlide(currentSlide);
-
-let intervalId = setInterval(nextSlide, 8000); //  Автоматическое переключение слайдов
+showSlide(previousSlide, currentSlide, followingSlide);
