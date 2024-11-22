@@ -11,6 +11,9 @@ const slides = Array.from(sliderContainer.children);
 
 let currentSlide;
 
+let SliderInterval;
+const IntervalTimer = 4000;
+
 function showSlide() {
   currentSlide = Math.floor(currentTranslate / -440) + 1;
   slides.forEach((slide) => slide.classList.remove("active"));
@@ -20,27 +23,30 @@ function showSlide() {
 }
 
 function nextSlide() {
+  clearInterval(SliderInterval);
   currentTranslate -= slideWidth;
   if (currentTranslate < -slideWidth * (numSlides - 2)) {
     currentTranslate = 440;
   }
   sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
   showSlide();
+  SliderInterval = setInterval(nextSlide, IntervalTimer);
 }
 
 function prevSlide() {
+  clearInterval(SliderInterval);
   currentTranslate += slideWidth;
   if (currentTranslate > slideWidth) {
     currentTranslate = -slideWidth * (numSlides - 2);
   }
   sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
   showSlide();
+  SliderInterval = setInterval(nextSlide, IntervalTimer);
 }
 
+SliderInterval = setInterval(nextSlide, IntervalTimer);
 showSlide();
 
 prevButton.addEventListener("click", prevSlide);
 
 nextButton.addEventListener("click", nextSlide);
-
-setInterval(nextSlide, 10000);
