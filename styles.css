@@ -441,28 +441,6 @@ hr {
   height: 370px;
 }
 
-/* 
-.slider {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  justify-content: space-between;
-  overflow: hidden;
-}
-
-.slider .slide {
-  transition: opacity 0.5s ease-in-out;
-}
-
-.slider .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.slider .slide.active {
-  opacity: 1;
-} */
-
 /* contacts */
 
 .contacts {
