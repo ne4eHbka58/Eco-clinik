@@ -50,3 +50,14 @@ showSlide();
 prevButton.addEventListener("click", prevSlide);
 
 nextButton.addEventListener("click", nextSlide);
+
+window.addEventListener("blur", stopSlider); // Пауза при потере фокуса
+window.addEventListener("focus", startSlider); // Возобновление при получении фокуса
+
+// function startSlider() {
+//   SliderInterval = setInterval(nextSlide, IntervalTimer);
+// }
+
+// function stopSlider() {
+//   SliderInterval && clearInterval(SliderInterval);
+// }
