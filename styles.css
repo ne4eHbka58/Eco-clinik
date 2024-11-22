@@ -24,6 +24,10 @@
   color: var(--white-gray-color);
 }
 
+.white-text {
+  color: #fff;
+}
+
 .bold {
   font-weight: 900 !important;
 }
@@ -78,6 +82,15 @@ body {
   color: black;
   padding: 0;
   margin: 0;
+}
+
+img {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .container {
@@ -286,8 +299,7 @@ hr {
   gap: 15px;
 }
 
-.dantists-image,
-.chief-image {
+.dantists-image {
   width: 400px;
   aspect-ratio: 2 / 3;
   border-radius: 15px;
@@ -304,7 +316,11 @@ hr {
 }
 
 .chief-image {
-  margin-left: 110px;
+  /* margin-left: 110px; */
+  flex-shrink: 0;
+  width: 800px;
+  height: 600px;
+  border-radius: 15px;
 }
 
 .chief {
@@ -312,7 +328,7 @@ hr {
   display: flex;
   flex-direction: row;
   align-items: start;
-  gap: 75px;
+  gap: 95px;
 }
 
 .chief p {
@@ -320,6 +336,13 @@ hr {
   padding: 0;
   /* width: 1120px; */
   line-height: 56px;
+}
+
+.chief-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
 }
 
 .examples {
@@ -344,10 +367,20 @@ hr {
 
 /* welcome */
 
+.welcome {
+  height: 540px;
+}
+
 .welcome-image {
   width: 500px;
   aspect-ratio: 10 / 7;
   border-radius: 15px;
+}
+
+.welcome-text-and-controlls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /* slider */
@@ -355,7 +388,7 @@ hr {
 .controlls {
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  /* justify-content: end; */
   gap: 25px;
   margin-bottom: 25px;
 }
@@ -378,6 +411,38 @@ hr {
 }
 
 .slider {
+  width: 1620px; /* Adjust width as needed */
+  margin: 50px auto;
+  overflow: hidden;
+  position: relative; /* Important for dragging */
+}
+.slider-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  transition: transform 0.5s ease-in-out; /* Smooth transition */
+  position: relative; /* Important for dragging */
+}
+.slide {
+  width: 440px; /* Adjust width as needed */
+  height: 320px;
+  margin-right: 10px;
+  /* object-fit: cover; */
+  flex-shrink: 0;
+  transition: width, height 0.5s ease-in-out;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.active {
+  width: 510px; /* Adjust width as needed */
+  height: 370px;
+}
+
+/* 
+.slider {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: space-between;
@@ -396,7 +461,7 @@ hr {
 
 .slider .slide.active {
   opacity: 1;
-}
+} */
 
 /* contacts */
 
