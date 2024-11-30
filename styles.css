@@ -255,8 +255,9 @@ hr {
 }
 
 .services-with-prices {
-  display: grid;
-  grid-template-columns: auto auto auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 
 .service-with-price {
