@@ -34,7 +34,11 @@
             </div>
           </div>
           <div>
-            <button class="button-default" id="head-button">
+            <button
+              class="button-default button-modal"
+              onclick="openModal()"
+              id="head-button"
+            >
               Записаться на приём
             </button>
           </div>
@@ -45,7 +49,11 @@
         <div class="gallery-row">
           <div class="gallery-appointment">
             <img src="media/image-1.png" alt="" id="img-1" />
-            <button class="button-default text-uppercase" id="gallery-button">
+            <button
+              class="button-default button-modal text-uppercase"
+              onclick="openModal()"
+              id="gallery-button"
+            >
               Записаться на бесплатную консультацию
             </button>
           </div>
@@ -147,18 +155,24 @@
           <div class="service-with-price">
             <span class="usluga">Имплантация зуба</span>
             <span class="price">от 2.500 рублей в месяц</span>
-            <button class="button-default">Записаться на приём</button>
+            <button class="button-default button-modal" onclick="openModal()">
+              Записаться на приём
+            </button>
           </div>
 
           <div class="service-with-price">
             <span class="usluga">Профгигиена <br />по сертификату</span>
             <span class="price">Бесплатно</span>
-            <button class="button-default">Записаться на приём</button>
+            <button class="button-default button-modal" onclick="openModal()">
+              Записаться на приём
+            </button>
           </div>
           <div class="service-with-price">
             <span class="usluga">Установка коронки</span>
             <span class="price">от 30.000 рублей</span>
-            <button class="button-default">Записаться на приём</button>
+            <button class="button-default button-modal" onclick="openModal()">
+              Записаться на приём
+            </button>
           </div>
         </div>
         <div class="examples">
@@ -277,6 +291,39 @@
         </div>
       </div>
     </footer>
+    <div class="dark-bg">
+      <div class="modal">
+        <form class="modal-form">
+          <button id="close-modal-button">
+            <img src="media/CloseBtn.svg" alt="" />
+          </button>
+          <div class="input-name input-text">
+            <input type="text" placeholder="Имя" id="inputName" />
+            <p class="name-validation validation">
+              Пожалуйста, введите корректное имя
+            </p>
+          </div>
+          <div class="input-phone input-text">
+            <input type="text" placeholder="89991234567" id="inputPhone" />
+            <p class="phone-validation validation">
+              Пожалуйста, введите номер вида
+            </p>
+          </div>
+          <div class="input-privacy">
+            <input type="checkbox" id="privacy" />
+            <label for="privacy"></label
+            ><span> Согласие на обработку персональных данных</span>
+          </div>
+          <button class="button-default submit-button" id="head-button">
+            Записаться на приём
+          </button>
+          <p class="full-validation validation">
+            Пожалуйста, заполните все поля и согласитесь на обработку
+            персональных данных
+          </p>
+        </form>
+      </div>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
