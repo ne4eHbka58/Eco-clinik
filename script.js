@@ -117,7 +117,7 @@ function checkName() {
       validationNameWarn.style.display = "none";
     } // Если поле пустое, то предупреждение убирается
     ValidName = false;
-  } else if (/^[а-яА-Я]+$/.test(validationNameInput.value) != true) {
+  } else if (/^[А-ЯЁа-яё]+$/.test(validationNameInput.value) != true) {
     validationNameWarn.style.display = "block";
     ValidName = false;
   } else {
