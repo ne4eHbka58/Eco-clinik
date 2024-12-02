@@ -2,7 +2,7 @@
 const form = document.querySelector("form");
 
 form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Отменяем стандартное поведение
+  event.preventDefault(); // Отменяем стандартное поведение формы
 });
 // Slider
 
@@ -90,6 +90,7 @@ function closeModal() {
 }
 // Validation
 
+// Инпуты и поля предупреждений,а также кнопка и чекбокс
 const validationNameInput = document.querySelector("#inputName");
 const validationNameWarn = document.querySelector(".name-validation");
 const validationPhoneInput = document.querySelector("#inputPhone");
@@ -97,9 +98,12 @@ const validationPhoneWarn = document.querySelector(".phone-validation");
 const validationCheckBox = document.querySelector("#privacy");
 const validationSubmitButton = document.querySelector(".submit-button");
 const validationfullWarn = document.querySelector(".full-validation");
+
+// Статусы
 let ValidName = false;
 let ValidPhone = false;
 
+// Добавление событий проверок
 validationNameInput.addEventListener("blur", checkName);
 
 validationNameInput.addEventListener("focus", inputtingName);
@@ -120,9 +124,10 @@ function checkName() {
   } else if (/^[А-ЯЁа-яё]+$/.test(validationNameInput.value) != true) {
     validationNameWarn.style.display = "block";
     ValidName = false;
-  } else {
+  } // Проверка регулярного выражения
+  else {
     ValidName = true;
-  }
+  } // Прохождение проверки
 }
 
 function inputtingName() {
@@ -130,7 +135,7 @@ function inputtingName() {
   if (validationNameWarn.style.display === "block") {
     validationNameWarn.style.display = "none";
   }
-}
+} // Во время ввода значения предупреждение убирается
 
 function checkPhone() {
   console.log("checkPhone");
@@ -143,9 +148,10 @@ function checkPhone() {
   if (/^(89)\d{9}$/.test(validationPhoneInput.value) != true) {
     validationPhoneWarn.style.display = "block";
     ValidPhone = false;
-  } else {
+  } // Проверка регулярного выражения
+  else {
     ValidPhone = true;
-  }
+  } // Прохождение проверки
 }
 
 function inputtingPhone() {
@@ -153,7 +159,7 @@ function inputtingPhone() {
   if (validationPhoneWarn.style.display === "block") {
     validationPhoneWarn.style.display = "none";
   }
-}
+} // Во время ввода значения предупреждение убирается
 
 function checkValidate() {
   if (ValidName === true && ValidPhone === true && validationCheckBox.checked) {

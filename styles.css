@@ -315,8 +315,6 @@ hr {
   flex-direction: row;
 }
 
-/* dantists */
-
 /* dentistry section*/
 
 .dentistry-section {
@@ -350,7 +348,6 @@ hr {
 .controlls {
   display: flex;
   flex-direction: row;
-  /* justify-content: end; */
   gap: 25px;
   margin-bottom: 25px;
 }
@@ -373,7 +370,7 @@ hr {
 }
 
 .slider {
-  width: 1620px; /* Adjust width as needed */
+  width: 1620px;
   margin: 50px auto;
   overflow: hidden;
   position: relative; /* Important for dragging */
@@ -386,10 +383,9 @@ hr {
   position: relative; /* Important for dragging */
 }
 .slide {
-  width: 440px; /* Adjust width as needed */
+  width: 440px;
   height: 320px;
   margin-right: 10px;
-  /* object-fit: cover; */
   flex-shrink: 0;
   transition: width 0.5s ease-in-out;
   transition: height 0.5s ease-in-out;
@@ -400,7 +396,7 @@ hr {
   display: block;
 }
 .active {
-  width: 510px; /* Adjust width as needed */
+  width: 510px;
   height: 370px;
 }
 
@@ -495,13 +491,10 @@ footer p {
   transform: translate(-50%, -50%);
   padding-block: 100px;
   z-index: 101; /* Должно быть больше, чем z-index оверлея */
-  /* opacity: 0; */
-  /* transform: scale(0.9); */
   transition: opacity 1s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .modal.show {
-  /* transition: opacity 1s ease-in-out; */
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
 }
@@ -571,8 +564,8 @@ footer p {
 
 .input-privacy label {
   display: inline-flex;
-  align-items: center; /* Выравнивание по вертикали */
-  padding: 5px; /*Добавляем отступ*/
+  align-items: center;
+  padding: 5px;
   cursor: pointer;
 }
 
@@ -586,6 +579,7 @@ footer p {
   border: 3px solid var(--brown-color);
 }
 
+/*  Активный чекбокс */
 .input-privacy input[type="checkbox"]:checked + label::before {
   background-image: url(media/CheckMark.svg);
   background-repeat: no-repeat;
