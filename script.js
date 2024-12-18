@@ -1,9 +1,3 @@
-// Form
-const form = document.querySelector("form");
-
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Отменяем стандартное поведение формы
-});
 // Slider
 
 const prevButton = document.querySelector(".button-prev");
@@ -59,17 +53,6 @@ prevButton.addEventListener("click", prevSlide);
 
 nextButton.addEventListener("click", nextSlide);
 
-// window.addEventListener("blur", stopSlider); // Пауза при потере фокуса
-// window.addEventListener("focus", startSlider); // Возобновление при получении фокуса
-
-// function startSlider() {
-//   SliderInterval = setInterval(nextSlide, IntervalTimer);
-// }
-
-// function stopSlider() {
-//   SliderInterval && clearInterval(SliderInterval);
-// }
-
 // Modal
 
 const Bg = document.querySelector(".dark-bg");
@@ -87,87 +70,4 @@ function closeModal() {
   console.log("close");
   Bg.style.display = "none";
   Modal.classList.remove("show");
-}
-// Validation
-
-// Инпуты и поля предупреждений,а также кнопка и чекбокс
-const validationNameInput = document.querySelector("#inputName");
-const validationNameWarn = document.querySelector(".name-validation");
-const validationPhoneInput = document.querySelector("#inputPhone");
-const validationPhoneWarn = document.querySelector(".phone-validation");
-const validationCheckBox = document.querySelector("#privacy");
-const validationSubmitButton = document.querySelector(".submit-button");
-const validationfullWarn = document.querySelector(".full-validation");
-
-// Статусы
-let ValidName = false;
-let ValidPhone = false;
-
-// Добавление событий проверок
-validationNameInput.addEventListener("blur", checkName);
-
-validationNameInput.addEventListener("focus", inputtingName);
-
-validationPhoneInput.addEventListener("blur", checkPhone);
-
-validationPhoneInput.addEventListener("focus", inputtingPhone);
-
-validationSubmitButton.addEventListener("click", checkValidate);
-
-function checkName() {
-  console.log("checkName");
-  if (validationNameInput.value === "") {
-    if (validationNameWarn.style.display === "block") {
-      validationNameWarn.style.display = "none";
-    } // Если поле пустое, то предупреждение убирается
-    ValidName = false;
-  } else if (/^[А-ЯЁа-яё]+$/.test(validationNameInput.value) != true) {
-    validationNameWarn.style.display = "block";
-    ValidName = false;
-  } // Проверка регулярного выражения
-  else {
-    ValidName = true;
-  } // Прохождение проверки
-}
-
-function inputtingName() {
-  console.log("inputtingName");
-  if (validationNameWarn.style.display === "block") {
-    validationNameWarn.style.display = "none";
-  }
-} // Во время ввода значения предупреждение убирается
-
-function checkPhone() {
-  console.log("checkPhone");
-  if (validationPhoneInput.value === "") {
-    if (validationPhoneWarn.style.display === "block") {
-      validationPhoneWarn.style.display = "none";
-    } // Если поле пустое, то предупреждение убирается
-    ValidPhone = false;
-  }
-  if (/^(89)\d{9}$/.test(validationPhoneInput.value) != true) {
-    validationPhoneWarn.style.display = "block";
-    ValidPhone = false;
-  } // Проверка регулярного выражения
-  else {
-    ValidPhone = true;
-  } // Прохождение проверки
-}
-
-function inputtingPhone() {
-  console.log("inputtingPhone");
-  if (validationPhoneWarn.style.display === "block") {
-    validationPhoneWarn.style.display = "none";
-  }
-} // Во время ввода значения предупреждение убирается
-
-function checkValidate() {
-  if (ValidName === true && ValidPhone === true && validationCheckBox.checked) {
-    //
-    //  Здесь форма должна отправить данные
-    //
-    closeModal();
-  } else {
-    validationfullWarn.style.display = "block";
-  }
 }

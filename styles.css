@@ -42,6 +42,10 @@
   font-size: 14px !important;
 }
 
+.text-32 {
+  font-size: 32px !important;
+}
+
 .text-36 {
   font-size: 36px !important;
 }
@@ -480,7 +484,7 @@ footer p {
 
 .modal {
   box-sizing: border-box;
-  width: 480px;
+  width: 870px;
   height: 460px;
   border-radius: 50px;
   border: 3px solid var(--brown-color);
@@ -492,17 +496,16 @@ footer p {
   padding-block: 100px;
   z-index: 101; /* Должно быть больше, чем z-index оверлея */
   transition: opacity 1s ease-in-out, transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  padding-top: 95px;
+  padding-left: 50px;
 }
 
 .modal.show {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
-}
-
-.modal-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 #close-modal-button {
@@ -520,69 +523,20 @@ footer p {
   filter: brightness(80%);
 }
 
-.modal-form input[type="text"] {
-  width: 260px;
-  height: 30px;
-  background-color: var(--form-input-bg-color);
-  border: 3px solid var(--brown-color);
-  outline: none;
-  font-size: 20px;
-  font-weight: 900;
-  color: rgba(55, 47, 44, 1);
+.modal .contacts {
+  margin-top: 0;
 }
 
-.modal-form input[type="text"]::placeholder {
-  padding-left: 5px;
-  color: rgba(55, 47, 44, 0.75);
+.modal .map {
+  margin-left: 0;
 }
-
-.input-text {
-  margin-bottom: 30px;
-}
-
-.validation {
-  margin: 0;
-  display: none;
-  font-size: 10px;
-  margin-top: 5px;
-  text-align: center;
-  color: red;
-}
-
-.input-privacy {
-  font-size: 10px;
-  color: var(--white-gray-color);
-  margin-bottom: 55px;
+.modal .contacts-text {
+  margin-left: 35px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 }
 
-.input-privacy input[type="checkbox"] {
-  display: none; /* Скрываем стандартный чекбокс */
-}
-
-.input-privacy label {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px;
-  cursor: pointer;
-}
-
-.input-privacy label::before {
-  content: "";
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin-right: 5px; /* Отступ между галочкой и текстом */
-  background-color: var(--form-input-bg-color);
-  border: 3px solid var(--brown-color);
-}
-
-/*  Активный чекбокс */
-.input-privacy input[type="checkbox"]:checked + label::before {
-  background-image: url(media/CheckMark.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 90%;
+.modal .info-with-pins {
+  margin-top: 15px;
 }

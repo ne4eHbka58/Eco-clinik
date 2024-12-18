@@ -293,35 +293,42 @@
     </footer>
     <div class="dark-bg">
       <div class="modal">
-        <form class="modal-form">
-          <button id="close-modal-button">
-            <img src="media/CloseBtn.svg" alt="" />
-          </button>
-          <div class="input-name input-text">
-            <input type="text" placeholder="Имя" id="inputName" />
-            <p class="name-validation validation">
-              Пожалуйста, введите корректное имя
-            </p>
+        <button id="close-modal-button">
+          <img src="media/CloseBtn.svg" alt="" />
+        </button>
+        <div class="contacts">
+          <div class="map">
+            <script
+              type="text/javascript"
+              charset="utf-8"
+              async
+              src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4ee3f4d1593c50ba4f1e0db238859a009b1a06ae67e69b796891d729a3635fdd&amp;width=385&amp;height=265&amp;lang=ru_RU&amp;scroll=true"
+            ></script>
           </div>
-          <div class="input-phone input-text">
-            <input type="text" placeholder="89991234567" id="inputPhone" />
-            <p class="phone-validation validation">
-              Пожалуйста, введите номер вида
-            </p>
+          <div class="contacts-text">
+            <span class="brown-text text-32 bold text-uppercase">
+              Наши контакты</span
+            >
+            <div class="gray-text info-with-pins">
+              <div class="address info-with-pin">
+                <img src="media/Location.svg" alt="" />
+                <span>Притомская Набережная, дом 3А, помещение 79</span>
+              </div>
+              <div class="opening-hours info-with-pin">
+                <img src="media/Clock.svg" alt="" />
+                <span>ПН-ВС с 9:00 до 21:00</span>
+              </div>
+              <div class="phone-number info-with-pin">
+                <img src="media/Phone.svg" alt="" />
+                <span>+7 (3842) 67-05-67</span>
+              </div>
+              <div class="mail info-with-pin">
+                <img src="media/Mail.svg" alt="" />
+                <span>troia-km@mail.ru</span>
+              </div>
+            </div>
           </div>
-          <div class="input-privacy">
-            <input type="checkbox" id="privacy" />
-            <label for="privacy"></label
-            ><span> Согласие на обработку персональных данных</span>
-          </div>
-          <button class="button-default submit-button" id="head-button">
-            Записаться на приём
-          </button>
-          <p class="full-validation validation">
-            Пожалуйста, заполните все поля и согласитесь на обработку
-            персональных данных
-          </p>
-        </form>
+        </div>
       </div>
     </div>
   </body>
